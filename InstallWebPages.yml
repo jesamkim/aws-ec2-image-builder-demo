@@ -1,0 +1,13 @@
+name: InstallWebPages
+description: Install the web pages for this lab
+schemaVersion: 1.0
+
+phases:
+  - name: build
+    steps:
+    - name: InstallWebPages
+      action: ExecuteBash
+      inputs:
+        commands:
+          - cd /var/www/html;wget https://aws-joozero.s3.ap-northeast-2.amazonaws.com/immersion-day-app-php7.tar.gz  
+          - cd /var/www/html;tar xvfz immersion-day-app-php7.tar.gz

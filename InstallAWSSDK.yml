@@ -1,0 +1,14 @@
+name: InstallAWSSDK
+description: Install the AWS SDK for PHP
+schemaVersion: 1.0
+
+phases:
+  - name: build
+    steps:
+    - name: InstallAWSSDK
+      action: ExecuteBash
+      inputs:
+        commands:
+          - mkdir /var/www/html/vendor
+          - cd /var/www/html/vendor;wget https://docs.aws.amazon.com/aws-sdk-php/v3/download/aws.zip
+          - cd /var/www/html/vendor;unzip aws.zip

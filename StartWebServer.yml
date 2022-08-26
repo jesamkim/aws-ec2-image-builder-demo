@@ -1,0 +1,13 @@
+name: StartWebServer
+description: Start the web server
+schemaVersion: 1.0
+
+phases:
+  - name: build
+    steps:
+    - name: StartWebServer
+      action: ExecuteBash
+      inputs:
+        commands:
+          - chkconfig httpd on
+          - systemctl start httpd
